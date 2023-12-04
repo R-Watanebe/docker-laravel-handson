@@ -17,6 +17,30 @@ services:
     build: ./infra/mysql
     volumes:
       - db-store:/var/lib/mysql
+    image: mysql:8.0.27
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      TZ: 'Asia/Tokyo'
+
+  phpmyadmin:
+    build: ./bin/phpmyadmin
+    platform: linux/arm64
+    container_name: 'plesk01_PMA'
+    links:
+        - db
+    environment:
+        PMA_HOST: db
+        PMA_PORT: 3306
+    ports:
+        - 127.0.0.1:8889:80
+    volumes:
+        #- /sessions
+        - ./bin/phpmyadmin/phpmyadmin-misc.ini:/usr/local/etc/php/conf.d/phpmyadmin-misc.ini
 
 volumes:
   db-store:
