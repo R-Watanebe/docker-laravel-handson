@@ -24,7 +24,7 @@ services:
       MYSQL_ROOT_PASSWORD: mysql
       MYSQL_DATABASE: db
       MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: mysql
       TZ: 'Asia/Tokyo'
 
   phpmyadmin:
