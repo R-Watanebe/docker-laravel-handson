@@ -6,8 +6,21 @@ use Illuminate\Database\Seeder;
 use App\Models\Post;
 use Database\Factories\CommentFactory;
 
+/**
+ * PostsTableSeeder クラス
+ * 
+ * データベースのシーディングを行うためのクラスです。
+ * Posts テーブルとそれに関連する Comments テーブルのデータを生成します。
+ */
 class PostsTableSeeder extends Seeder
 {
+    /**
+     * run メソッド
+     * 
+     * このメソッドはシーディングを実行します。
+     * まず、Posts テーブルに50件のデータを生成し、
+     * その後、各投稿に対して2件のコメントを生成します。
+     */
     public function run()
     {
         // Posts テーブルのデータを生成
