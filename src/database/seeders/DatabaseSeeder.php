@@ -4,10 +4,11 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+/** データベースシーダー */
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * データベースをシード
      *
      * @return void
      */
